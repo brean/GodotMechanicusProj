@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=4 format=3 uid="uid://bapa7akoocm8q"]
+[gd_resource type="VisualShader" format=3 uid="uid://bapa7akoocm8q"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_kp341"]
 frequency = 0.007
@@ -10,24 +10,6 @@ noise = SubResource("FastNoiseLite_kp341")
 texture = SubResource("NoiseTexture2D_jwbyw")
 
 [resource]
-code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
-
-uniform sampler2D tex_frg_2;
-
-
-
-void fragment() {
-// Texture2D:2
-	vec4 n_out2p0 = texture(tex_frg_2, UV);
-
-
-// Output:0
-	ALBEDO = vec3(n_out2p0.xyz);
-
-
-}
-"
 nodes/fragment/0/position = Vector2(1500, 240)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_xnlgq")
 nodes/fragment/2/position = Vector2(860, 240)
